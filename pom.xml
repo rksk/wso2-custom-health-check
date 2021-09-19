@@ -5,13 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.wso2.custom</groupId>
-  <artifactId>org.wso2.custom.hazelcast.healthchecker</artifactId>
+  <artifactId>org.wso2.custom.healthchecker</artifactId>
   <packaging>bundle</packaging>
   <version>1.0.0</version>
 
-  <name>wso2-hazelcast-health-check</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <name>wso2-custom-health-check</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,7 +21,17 @@
     <dependency>
       <groupId>org.wso2.carbon.healthcheck</groupId>
       <artifactId>org.wso2.carbon.healthcheck.api.core</artifactId>
-      <version>1.2.2</version>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2.wso2</groupId>
+      <artifactId>axis2</artifactId>
+      <version>1.6.1-wso2v28</version>
+    </dependency>
+    <dependency>
+      <groupId>org.wso2.carbon</groupId>
+      <artifactId>org.wso2.carbon.utils</artifactId>
+      <version>4.4.35</version>
     </dependency>
   </dependencies>
 
@@ -52,13 +60,13 @@
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Bundle-Name>${project.artifactId}</Bundle-Name>
             <Private-Package>
-              org.wso2.custom.hazelcast.healthchecker.internal
+              org.wso2.custom.healthchecker.internal
             </Private-Package>
             <Import-Package>
             </Import-Package>
             <Export-Package>
-              !org.wso2.custom.hazelcast.healthchecker.internal,
-              org.wso2.custom.hazelcast.healthchecker.*;
+              !org.wso2.custom.healthchecker.internal,
+              org.wso2.custom.healthchecker.*;
               version="${project.version}"
             </Export-Package>
             <DynamicImport-Package>*</DynamicImport-Package>
@@ -67,6 +75,4 @@
       </plugin>
     </plugins>
   </build>
-
-
 </project>
